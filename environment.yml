@@ -1,0 +1,16 @@
+name: EdgeRadNet
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - pytorch
+  - pytorch-cuda=11.8
+  - torchaudio
+  - torchvision
+  - jupyter
+  - h5py
+  - matplotlib
+  - scipy
+  - anaconda::scikit-learn
+  - tqdm
+  - tensorboard
