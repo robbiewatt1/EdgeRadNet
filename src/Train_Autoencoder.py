@@ -121,7 +121,7 @@ if __name__ == "__main__":
                           [4096, 256, 32], 5).to(device)
 
     # Define the dataset nd train / test split
-    full_dataset = EdgeRadDataSet("./Data/B3B4.h5")
+    full_dataset = EdgeRadDataSet("../../Data/B1B2.h5")
     train_size = int(0.9 * len(full_dataset))
     test_size = len(full_dataset) - train_size
     train_dataset, test_dataset = torch.utils.data.random_split(
@@ -148,5 +148,5 @@ if __name__ == "__main__":
 
             if loss <= min(test_losses):
                 torch.save(network.state_dict(),
-                           f"./model_B3B4/model_{epoch}.pth")
+                           f"./model_B1B2/model_{epoch}.pth")
                 print(f"Model saved at epoch {epoch}")
