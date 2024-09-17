@@ -9,6 +9,7 @@ from Network import AutoEncoder
 This script is used to train an autoencoder for a specific camera.
 """
 
+
 def train_epoch(network, train_loader, loss_fn, optimiser, writer, epoch,
                 device="cuda:0"):
     """
@@ -121,7 +122,7 @@ if __name__ == "__main__":
                           [4096, 256, 32], 5).to(device)
 
     # Define the dataset nd train / test split
-    full_dataset = EdgeRadDataSet("../../Data/B1B2.h5")
+    full_dataset = EdgeRadDataSet("./Data/B1B2.h5")
     train_size = int(0.9 * len(full_dataset))
     test_size = len(full_dataset) - train_size
     train_dataset, test_dataset = torch.utils.data.random_split(

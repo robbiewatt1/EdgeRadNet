@@ -174,3 +174,18 @@ class LinearBlock(torch.nn.Module):
 
     def forward(self, x):
         return self.block(x)
+
+
+class FullyConnected(torch.nn.Module):
+
+    def __init__(self, in_dim=64, out_dim=32):
+        super(FullyConnected, self).__init__()
+        self.fc = torch.nn.Sequential(
+            LinearBlock(in_dim, 128),
+            LinearBlock(128, 128),
+            LinearBlock(128, 128),
+            LinearBlock(128, 128),
+            torch.nn.Linear(128, out_dim))
+
+    def forward(self, x):
+        return self.fc(x)
